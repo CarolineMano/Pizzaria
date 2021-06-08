@@ -12,6 +12,10 @@ public class Menu {
         };
     }
 
+    public Product[] getMenu() {
+        return menu;
+    }
+
     public String showAllToppings() {
         String output = "***Menu***\n";
         for (int i = 0; i < menu.length; i++) {

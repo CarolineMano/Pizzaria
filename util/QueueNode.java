@@ -4,8 +4,8 @@ public class QueueNode {
     private List list;
     private QueueNode next;
 
-    public QueueNode() {
-        list = new List();
+    public QueueNode(List newList) {
+        list = newList;
         next = null;
     }
 

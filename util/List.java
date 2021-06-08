@@ -22,7 +22,7 @@ public class List {
     }
 
     public String listAll() {
-        String output = "Produtos: ";
+        String output = "";
         ListNode auxiliar = beginning;
         double amountDue = 0;
 

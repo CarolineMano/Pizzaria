@@ -12,8 +12,8 @@ public class Queue {
         return beginning == null;
     }
 
-    public void enqueue() {
-        QueueNode newNode = new QueueNode();
+    public void enqueue(List newList) {
+        QueueNode newNode = new QueueNode(newList);
 
         if(isEmpty()) {
             beginning = end = newNode;
@@ -24,12 +24,14 @@ public class Queue {
     }
 
     public String show() {
-        String saida = "Pedidos: ";
+        String saida = "";
         QueueNode auxiliar = beginning;
+        int counter = 1;
 
         while(auxiliar != null) {
-            saida += auxiliar.getList().listAll() + "\n********";
+            saida += "Pedido nº " + counter + "\n" + auxiliar.getList().listAll() + "\n********\n";
             auxiliar = auxiliar.getNext();
+            counter++;
         }
         return saida;
     }

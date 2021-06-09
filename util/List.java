@@ -1,6 +1,7 @@
 package util;
 
 import java.text.DecimalFormat;
+import model.Product;
 
 public class List {
     private ListNode beginning;
@@ -15,7 +16,8 @@ public class List {
         return (beginning == null);
     }
 
-    public void addBeginning(ListNode newNode) {
+    public void addBeginning(Product nextProduct) {
+        ListNode newNode = new ListNode(nextProduct);
         newNode.setNext(beginning);
         this.beginning = newNode;
         size++;

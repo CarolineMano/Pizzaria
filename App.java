@@ -1,8 +1,6 @@
-// import model.Product;
 import java.util.Scanner;
 import model.Menu;
 import util.List;
-import util.ListNode;
 import util.Tool;
 
 public class App {
@@ -13,7 +11,6 @@ public class App {
         int option = 0;
         int topping = 0;
         List newOrder;
-        ListNode newListNode;
         boolean endOfProgram = true;
 
         System.out.println("*****Pizzaria da Carol*****");
@@ -41,8 +38,7 @@ public class App {
                         System.out.println("Escolha o seu sabor a partir do número no menu: ");
                         topping = Tool.convertStringToInt(input) - 1;
                         if(topping >= 0 && topping <= 3) {
-                            newListNode = new ListNode(menu.getMenu()[topping]);
-                            newOrder.addBeginning(newListNode);
+                            newOrder.addBeginning(menu.getMenu()[topping]);
                             i++;
                         }
                         else {
@@ -52,9 +48,17 @@ public class App {
                     manager.addOrder(newOrder);
                     break;
                 case 2:
+                    if(manager.isEmpty()) {
+                        System.out.println("Não há pedidos para serem atendidos.");
+                        break;
+                    }
                     System.out.println(manager.showNextOrder());
                     break;
                 case 3:
+                    if(manager.isEmpty()) {
+                        System.out.println("Não há pedidos para serem atendidos.");
+                        break;
+                    }
                     System.out.println("Pedido pronto!");
                     System.out.println(manager.makeNextOrder());
                     break;

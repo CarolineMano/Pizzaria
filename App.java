@@ -46,6 +46,7 @@ public class App {
                         }
                     }
                     manager.addOrder(newOrder);
+                    System.out.println(newOrder.listAll()); 
                     break;
                 case 2:
                     if(manager.isEmpty()) {
